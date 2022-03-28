@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Surveys</h1>
+
+<div id="surveys">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Survey ID</th>
+      <th>User Name</th>
+      <th>Options</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>  
+    <% @surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.id %></td>
+        <td><%= survey.name %></td>
+        <td><%= link_to "Show this survey", survey %></td> 
+      </tr>
+      <% end %>
+   </tbody>
+  </table>
+</div>
+
+<%= link_to "New survey", new_survey_path %>
